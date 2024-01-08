@@ -1,0 +1,16 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        namespace: c210073b-f73e-478e-a794-3750c215ee68
+        group: MY_GROUP
+      config:
+        enabled: false

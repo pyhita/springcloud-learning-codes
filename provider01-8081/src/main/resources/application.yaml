@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        # nacos服务注册地址，可以配置多个，逗号分离
+        server-addr: localhost:8848
+        # nacos客户端向服务端发送心跳的时间间隔，单位是ms
+        heart-beat-interval: 5000
+        # 服务端没有接收到客户端心跳请求就设为不健康的时间间隔，默认是15s
+        heart-beat-timeout: 20000
+        # 命名空间ID
+        namespace: c210073b-f73e-478e-a794-3750c215ee68
+        # group 同一个group内 才可以进行服务调用
+        group: MY_GROUP
+        username: nacos
+        password: nacos
+      config:
+        enabled: false
+  application:
+    # 服务注册到nacos上的名称
+    name: service-provider
