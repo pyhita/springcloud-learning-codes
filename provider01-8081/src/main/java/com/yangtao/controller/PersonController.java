@@ -19,6 +19,15 @@ public class PersonController {
 
     @GetMapping
     public Person person() {
+
+        try {
+            log.info("log start");
+            Thread.sleep(5000);
+            log.info("log end");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         return Person.builder().name("kante").age(22).build();
     }
 
