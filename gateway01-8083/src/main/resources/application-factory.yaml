@@ -1,0 +1,33 @@
+
+
+
+# 断言工厂 相关配置
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: query-route
+          uri: https://www.baidu.com/
+          predicates:
+            - Query=color, gr.+
+            - Query=size
+        - id: token-route
+          uri: https://www.baidu.com/
+          predicates:
+            - Token=xxxyyyzzz
+#        - id: auth-route
+#          uri: https://www.baidu.com/
+#          predicates:
+#            - Auth=kante, 123456
+#        - id: my_route
+#          uri: https://www.baidu.com/
+#          predicates:
+##            - After=2017-01-20T17:42:47.789-07:00
+##            - Before=2027-01-20T17:42:47.789-07:00
+##            - Between=2017-01-20T17:42:47.789-07:00,2027-01-20T17:42:47.789-07:00
+##            - Cookie=city,beijing
+#            - Header=city,beijing
+#        - id: provider-route
+#          uri: http://localhost:8081
+#          predicates:
+#            - Path=/person/kante/**

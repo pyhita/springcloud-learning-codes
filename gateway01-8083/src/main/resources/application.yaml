@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+
+spring:
+  cloud:
+#    gateway:
+#      routes:
+#        - id: baidu_route
+#          uri: https://www.baidu.com/
+#          predicates:
+#            - Path=/**
+    nacos:
+      config:
+        enabled: false
+  profiles:
+    active: factory
