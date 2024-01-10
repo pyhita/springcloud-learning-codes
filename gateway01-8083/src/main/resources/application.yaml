@@ -14,4 +14,8 @@ spring:
       config:
         enabled: false
   profiles:
-    active: factory
+    active: filter
+
+  data:
+    redis:
+      host: localhost

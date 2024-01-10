@@ -1,7 +1,9 @@
 package com.yangtao;
 
+import com.yangtao.bean.Dog;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @Author: kante_yang
@@ -11,6 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProviderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(ProviderApplication.class, args);
+        Dog dog = (Dog) context.getBean("dog");
+        System.out.println(dog);
     }
 }
