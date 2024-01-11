@@ -22,9 +22,9 @@ spring:
 #        - id: my_route
 #          uri: https://www.baidu.com/
 #          predicates:
-##            - After=2017-01-20T17:42:47.789-07:00
-##            - Before=2027-01-20T17:42:47.789-07:00
-##            - Between=2017-01-20T17:42:47.789-07:00,2027-01-20T17:42:47.789-07:00
+#            - After=2017-01-20T17:42:47.789-07:00
+#            - Before=2027-01-20T17:42:47.789-07:00
+#            - Between=2017-01-20T17:42:47.789-07:00,2027-01-20T17:42:47.789-07:00
 ##            - Cookie=city,beijing
 #            - Header=city,beijing
 #        - id: provider-route

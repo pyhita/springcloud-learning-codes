@@ -8,6 +8,7 @@ spring:
             - Path=/test/header
           filters:
             - AddRequestHeader=x-trace-id,xxxyyyzzz
+            - AddHeader=new-color, red
         - id: param-route
           uri: http://localhost:8081/
           predicates:
