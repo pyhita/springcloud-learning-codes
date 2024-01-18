@@ -9,8 +9,17 @@ spring:
       server-addr: localhost:8848
       username: nacos
       password: nacos
+#    gateway:
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowed-origins: "*"
+#            allowed-methods:
+#              - GET
+#              - POST
+
   profiles:
-    active: globalfilters
+    active: global
 
   data:
     redis:

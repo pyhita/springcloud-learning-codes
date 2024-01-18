@@ -3,15 +3,23 @@ spring:
     gateway:
       discovery:
         locator:
+          # 允许gateway 到注册中心定位服务
           enabled: true
       loadbalancer:
+        # 服务找不到时候，状态码有503改为404
         use404: true
 
       routes:
         - id: lb_route
-          uri: http://service-provider
+          uri: http://localhost:8083
           predicates:
             - Path=/person/kante/**
+          metadata:
+            cors:
+              allowed-origins: "*"
+              allowed-methods:
+                - GET
+                - POST
     nacos:
       discovery:
         namespace: c210073b-f73e-478e-a794-3750c215ee68

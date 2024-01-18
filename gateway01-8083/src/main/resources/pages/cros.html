@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CORS</title>
+  <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function accessPerson() {
+      $.get("http://localhost:9000/person/kante?token=111", function (data) {
+        alert(data.name)
+      })
+    }
+  </script>
+</head>
+<body>
+  <input type="button" value="访问Person" onclick="accessPerson()"/>
+</body>
+</html>
