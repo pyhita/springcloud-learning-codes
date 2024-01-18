@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: filters_route
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/person/kante/**
+          filters:
+            - One=onefilter,111
+            - Two=twofilter,222
+            - Three=threefilter,333
+
+
+
+

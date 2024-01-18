@@ -6,8 +6,11 @@ spring:
     nacos:
       config:
         enabled: false
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
   profiles:
-    active: global
+    active: globalfilters
 
   data:
     redis:
