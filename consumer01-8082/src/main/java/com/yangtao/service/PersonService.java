@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @FeignClient(
         value = "service-provider",
-        path = "/person",
+        path = "/person/kante",
         fallback = PersonFallback.class
 )
 public interface PersonService {

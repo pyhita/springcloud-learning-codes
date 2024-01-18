@@ -72,5 +72,4 @@ public class RouteConfig {
                     .uri("https://www.baidu.com/"))
             .build();
     }
-
 }

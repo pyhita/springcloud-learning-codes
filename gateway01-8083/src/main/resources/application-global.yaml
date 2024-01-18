@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      loadbalancer:
+        use404: true
+
+      routes:
+        - id: lb_route
+          uri: http://service-provider
+          predicates:
+            - Path=/person/kante/**
+    nacos:
+      discovery:
+        namespace: c210073b-f73e-478e-a794-3750c215ee68
+        group: MY_GROUP
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+

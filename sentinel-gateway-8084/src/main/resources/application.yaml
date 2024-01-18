@@ -1,0 +1,41 @@
+server:
+  port: 8084
+
+spring:
+  cloud:
+    nacos:
+      config:
+        import-check:
+          enabled: false
+      discovery:
+        server-addr: localhost:8848
+        namespace: c210073b-f73e-478e-a794-3750c215ee68
+        group: MY_GROUP
+        username: nacos
+        password: nacos
+        cluster-name:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      loadbalancer:
+        use404: true
+      routes:
+        - id: get_route
+          uri: http://service-provider/
+          predicates:
+            - Path=/sentinel/get_route/**
+        - id: list_route
+          uri: http://service-provider/
+          predicates:
+            - Path=/sentinel/list_route/**
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+        port: 8719
+      eager: true
+      filter:
+        enabled: false
+  application:
+    name: sentinel-gateway-app
+

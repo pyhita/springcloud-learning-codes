@@ -1,0 +1,55 @@
+server:
+  port: 8084
+
+
+spring:
+  application:
+    name: sentinel-application
+  cloud:
+    nacos:
+      config:
+        import-check:
+          enabled: false
+      discovery:
+        server-addr: localhost:8848
+#        namespace: c210073b-f73e-478e-a794-3750c215ee68
+#        group: MY_GROUP
+        username: nacos
+        password: nacos
+    # 开启openfeign懒加载
+    openfeign:
+      lazy-attributes-resolution: true
+
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+        port: 8719
+      eager: true
+      datasource:
+        flows:
+          nacos:
+            server-addr: localhost:8848
+            username: nacos
+            password: nacos
+            rule-type: flow
+            data-id: ${spring.application.name}-flow-rules
+            data-type: json
+
+        degrades:
+          nacos:
+            server-addr: localhost:8848
+            username: nacos
+            password: nacos
+            rule-type: degrade
+            data-id: ${spring.application.name}-degrade-rules
+            data-type: json
+
+
+#      filter:
+#        enabled: false
+#      web-context-unify: false
+
+
+feign:
+  sentinel:
+    enabled: true

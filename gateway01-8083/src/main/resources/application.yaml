@@ -1,21 +1,16 @@
 server:
-  port: 8083
-
+  port: 9000
 
 spring:
   cloud:
-#    gateway:
-#      routes:
-#        - id: baidu_route
-#          uri: https://www.baidu.com/
-#          predicates:
-#            - Path=/**
     nacos:
       config:
         enabled: false
   profiles:
-    active: filter
+    active: global
 
   data:
     redis:
       host: localhost
+  application:
+    name: gateway-client
